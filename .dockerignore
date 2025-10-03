@@ -1,0 +1,8 @@
+# Docker and git files
+Dockerfile
+.dockerignore
+.gitignore
+
+# Scripts, documentation and compose file
+scripts/
+README.md
