@@ -51,28 +51,28 @@ docker build -t cordova-android:latest .
 
 ### 2. Run the Container to Build Your Project
 
-To conveniently run the container, you can use the `docker-shell.bat` or `docker-shell.sh` scripts.
+To conveniently run the container, you can use the `builder-shell.bat` or `builder-shell.sh` scripts.
 
 1.  Copy the appropriate script from the `scripts` directory to the root of your **Cordova project**:
-    *   For Windows: `scripts\windows\docker-shell.bat`
-    *   For Linux/macOS: `scripts\unix\docker-shell.sh`
+    *   For Windows: `scripts\windows\builder-shell.bat`
+    *   For Linux/macOS: `scripts\unix\builder-shell.sh`
 2.  Run the script from a terminal inside your project's directory.
 
 #### For Windows
 
 ```shell
-.\docker-shell.bat
+.\builder-shell.bat
 ```
 
 #### For Linux and macOS
 
 First, make the script executable:
 ```shell
-chmod +x docker-shell.sh
+chmod +x builder-shell.sh
 ```
 Then, run it:
 ```shell
-./docker-shell.sh
+./builder-shell.sh
 ```
 
 After running the script, you will be in an interactive shell inside the container, where your project is available in the `/app` directory.
