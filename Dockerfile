@@ -12,10 +12,12 @@ ENV ANDROID_CMD_TOOLS_VERSION=13114758
 ENV ANDROID_PACKAGES="platforms;android-34 platforms;android-35 platforms;android-36 build-tools;34.0.0 build-tools;35.0.0 build-tools;36.0.0"
 
 # Set environment variables for build tools
-ENV JAVA_HOME=/usr/lib/jvm/java-${JAVA_VERSION}-openjdk-amd64
+ARG TARGETARCH
+
+ENV JAVA_HOME=/usr/lib/jvm/java-${JAVA_VERSION}-openjdk-${TARGETARCH}
 ENV ANDROID_HOME=/opt/android-sdk
 ENV GRADLE_HOME=/opt/gradle
-ENV PATH=$PATH:$GRADLE_HOME/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
+ENV PATH=$PATH:$JAVA_HOME/bin:$GRADLE_HOME/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
 
 # 1. Install system dependencies
 RUN apt-get update && \
